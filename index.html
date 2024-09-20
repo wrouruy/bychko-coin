@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bychko-coin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <p id="numberCoin"></p>
+        <div class="coin"></div>
+
+        <div class="batteryContainer">
+            <p id="batterCharge"></p>
+            <div class="battery">
+                <div class="bar"></div>
+            </div>
+            <div class="nugget"></div>
+        </div>
+        
+    </div>
+
+
+
+    <div class="btnContainer"> 
+        <div class="row">
+            <div class="titleBtn">per-tap</div>
+            <div class="coinBar"><div></div></div>
+            <button type="button" id="perTap-btn">buy</button>
+        </div>
+     
+        <div class="row">
+            <div class="titleBtn">battery charge</div>
+            <div class="coinBar"><div></div></div>
+            <button type="button" id="batterCharge_btn">buy</button>
+        </div>
+
+        <div class="row">
+            <div class="titleBtn">battery charging</div>
+            <div class="coinBar"><div></div></div>
+            <button type="button" id="batterCharging_btn">buy</button>
+        </div>
+
+        <div class="row">
+            <div class="titleBtn">autoclicker</div>
+            <div class="coinBar"><div></div></div>
+            <button type="button" id="autoclicker_btn">buy</button>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
