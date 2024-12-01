@@ -3,9 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+html, body {
     font-family: Montserrat;
+    height: calc(100vh + 1px);
+
+    overflow: scroll;
+    scrollbar-width: none;
 }
+html::-webkit-scrollbar {
+    display: none;
+}
+
+
 .row{
     display: flex;
 }
@@ -17,11 +26,20 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: 0.3s;
+    overflow-y: auto;
     /* background: #001d61 #001850; */
 }
 .coin{
-    /* width: 150px;
-    height: 150px; */
+    width: 50vh;
+    height: 50vh;
+
+    /* position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: -50% -50%; */
+
     border-radius: 50%;
     transition: 100ms;
     border: 8px solid #00123a;

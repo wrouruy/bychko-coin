@@ -1,4 +1,4 @@
-let bychkoMain = JSON.parse(localStorage.getItem('bychkoMain')) || { coin: 0, perTap: 500, batteryCharge: 100, max_batteryCharge: 100, batteryCharging: 1000, autoclicker: false};
+let bychkoMain = JSON.parse(localStorage.getItem('bychkoMain')) || { coin: 0, perTap: 1, batteryCharge: 100, max_batteryCharge: 100, batteryCharging: 1000, autoclicker: false};
 
 
 // localStorage.clear()
@@ -25,10 +25,6 @@ function get_y() {
     return mouseY;
 }
 
-setInterval(function(){
-    $('.coin').css('width', window.innerHeight / 2)
-    $('.coin').css('height', window.innerHeight / 2)
-}, 300)
 
 function clickCoin(top, left){
     if(bychkoMain.batteryCharge > 0){
@@ -80,23 +76,22 @@ $('#clearAll').click(function(){
 })
 
 let isOpenShop = false
-$('.btnContainer').mouseenter(function(){
-    if(!isOpenShop){
-        $('.btnContainer').css('top', '2%')
-        isOpenShop = true
-    }
-})
-$('.wrap').mouseenter(function(){
-    if(isOpenShop){
-        $('.btnContainer').css('top', '98%')
-        isOpenShop = false
-    }
-})
+// $('.btnContainer').mouseenter(function(){
+//     if(!isOpenShop){
+//         $('.btnContainer').css('top', '2%')
+//         isOpenShop = true
+//     }
+// })
+// $('.wrap').mouseenter(function(){
+//     if(isOpenShop){
+//         $('.btnContainer').css('top', '98%')
+//         isOpenShop = false
+//     }
+// })
 
 setInterval(function(){
-    $('.coinBar div').css('width', Math.min(((bychkoMain.coin / 500) * 100), 100) + '%')
+    // $('.coinBar div').css('width', Math.min(((bychkoMain.coin / 500) * 100), 100) + '%')
     $('#batterCharge').text(`${bychkoMain.batteryCharge}/${bychkoMain.max_batteryCharge}`)
-
 }, 100)
 setInterval(function(){
     bychkoMain.batteryCharge = Math.min(bychkoMain.batteryCharge, bychkoMain.max_batteryCharge - 1)
@@ -114,12 +109,28 @@ $('#autoclicker_btn').click(function(){
 
         setInterval(function(){
             clickCoin((window.innerHeight / 2) - 100, window.innerWidth / 2)
-        }, 500)
+        }, 1500)
     }
 })
 
 if(bychkoMain.autoclicker == true){
     setInterval(function(){
         clickCoin((window.innerHeight / 2) - 100, window.innerWidth / 2)
-    }, 500)
+    }, 1500)
 }
+
+
+document.addEventListener('scroll', function () {
+    if (window.scrollY < 1) {
+       
+        if(!isOpenShop){
+            $('.btnContainer').css('top', '2%')
+            isOpenShop = true
+        }
+    } else {
+        if(isOpenShop){
+            $('.btnContainer').css('top', '98%')
+            isOpenShop = false
+        }
+    }
+});
