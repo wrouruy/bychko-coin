@@ -121,16 +121,15 @@ if(bychkoMain.autoclicker == true){
 
 
 document.addEventListener('scroll', function () {
-    if (window.scrollY < 1) {
+    if (window.scrollY != 0) {
        
-        if(!isOpenShop){
-            $('.btnContainer').css('top', '2%')
-            isOpenShop = true
-        }
+        $('.btnContainer').css('top', '2%')
+        isOpenShop = true
+
     } else {
-        if(isOpenShop){
+    
             $('.btnContainer').css('top', '98%')
             isOpenShop = false
-        }
+        
     }
 });
