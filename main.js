@@ -121,7 +121,7 @@ if(bychkoMain.autoclicker == true){
 
 
 document.addEventListener('scroll', function () {
-    if (window.scrollY == 0) {
+    if (window.scrollY == 1) {
        
         $('.btnContainer').css('top', '2%')
         isOpenShop = true
